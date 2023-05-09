@@ -1,0 +1,20 @@
+.nav{
+    display: flex;
+    gap: 35px;
+    border-bottom: 1px solid #4C8BF7;
+    margin-bottom: 26px;
+
+}
+.button{
+    background-color: transparent;
+    opacity: 0.8;
+    transition: border-bottom-color 0.4s ease, opacity 0.4s ease;
+    border: none;
+    outline: none;
+    padding: 6px 5px;
+    cursor: pointer;
+}
+.active{
+    border-bottom: 3px solid #4C8BF7;
+    opacity: 1;
+}

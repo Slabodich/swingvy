@@ -1,0 +1,10 @@
+.TextAboutAmoCRM{
+    min-width: 335px;
+}
+
+.heading{
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;;
+}
