@@ -91,6 +91,10 @@
     flex: 1;
 }
 
+.active{
+    color: red;
+}
+
 /*.downPanel span:first-child::after{*/
 /*    content: "";*/
 /*    width: 20%;*/

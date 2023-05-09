@@ -2,6 +2,7 @@
 import React, {useRef, useEffect} from 'react';
 import styles from './Item.module.css'
 import shave from "shave";
+import cnBind from 'classnames/bind'
 
 import likes from './Likes.svg'
 import comments from './Comments.svg'
@@ -10,8 +11,11 @@ import star from './Star.svg'
 import plug from './Заглушка.png'
 
 
-const Item = ({news}) => {
+const Item = ({news, isThird}) => {
     const elemRef = useRef(null)
+
+    const cx = cnBind.bind(styles)
+
     useEffect(() => {
         shave(elemRef.current, 69);
     }, []);
@@ -33,7 +37,7 @@ const Item = ({news}) => {
             <div className={styles.content}>
                 <h2 className={styles.title}>{news.title}</h2>
 
-                <p ref={elemRef} className={styles.preview}>
+                <p ref={elemRef} className={cx('preview', {'active': isThird === true})}>
                     {news.previewtext}
                 </p>
                 <div className={styles.downPanel}>
