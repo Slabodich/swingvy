@@ -5,7 +5,7 @@ import axios from "axios";
 
 const NewsItems = () => {
 
-    const [newses, setNews] = useState([])
+    const [newses, setNews] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -18,7 +18,17 @@ const NewsItems = () => {
 
     return (
         <div className={styles.newsItems}>
-            {newses.map(news => (
+            {newses.map((news) => (
+                // <>
+                //     {news.id % 3 === 0 ?
+                //     <Item
+                //         isFhird={isFhird}
+                //         setIsFhird={setIsFhird()}
+                //         key={news.id}
+                //         news={news}
+                //     />
+                //     : <Item key={news.id} news={news}/>}
+                // </>
                 <Item key={news.id} news={news}/>
             ))}
         </div>

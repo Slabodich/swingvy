@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, {useEffect, useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 import styles from './Item.module.css'
 import shave from "shave";
 
@@ -11,8 +11,10 @@ import plug from './Заглушка.png'
 
 
 const Item = ({news}) => {
-
-        shave('.preview', 60);
+    const elemRef = useRef(null)
+    useEffect(() => {
+        shave(elemRef.current, 69);
+    }, []);
     return (
         <div className={styles.item}>
             <div
@@ -31,7 +33,7 @@ const Item = ({news}) => {
             <div className={styles.content}>
                 <h2 className={styles.title}>{news.title}</h2>
 
-                <p className={styles.preview}>
+                <p ref={elemRef} className={styles.preview}>
                     {news.previewtext}
                 </p>
                 <div className={styles.downPanel}>
