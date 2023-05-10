@@ -20,13 +20,25 @@ const Item = ({news, isThird}) => {
         shave(elemRef.current, 69);
     }, []);
     return (
-        <div className={styles.item}>
+        <div
+            className={cx('item', {'activeItem': isThird})}
+            style={
+            isThird && news.link
+                ? {backgroundImage: `url(${news.link})`}
+                : isThird
+                ? {backgroundImage: `url('${plug}')`}
+                : {backgroundImage: 'none'}
+            }
+        >
             <div
-                className={styles.img}
+                className={cx('img', {'unActiveImg': isThird, 'activeImg': !isThird})}
                 style={news.link ? { backgroundImage: `url(${news.link})`}
                 : {backgroundImage: `url(${plug})`}}
             >
                 <button className={styles.favorite}>
+                    <>
+
+                    </>
                     <img
                         className={styles.imgFavorite}
                         src={star}
@@ -40,7 +52,7 @@ const Item = ({news, isThird}) => {
                 <p ref={elemRef} className={cx('preview', {'active': isThird === true})}>
                     {news.previewtext}
                 </p>
-                <div className={styles.downPanel}>
+                <div className={cx('downPanel', {'downPanelActive': isThird === true})}>
                     <span>{news.pubDate}</span>
                     <span><img src={likes} alt="likes"/>123</span>
                     <span><img src={comments} alt="comments"/>76</span>

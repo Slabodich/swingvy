@@ -7,8 +7,6 @@ const NewsItems = () => {
 
     const [newses, setNews] = useState([]);
 
-    const [isFhird, setIsFhird] = useState(true);
-
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get('http://localhost:3200/news')
@@ -24,7 +22,7 @@ const NewsItems = () => {
                 <>
                     {news.id % 3 === 0 ?
                     <Item
-                        isFhird={isFhird}
+                        isThird={true}
                         key={news.id}
                         news={news}
                     />
