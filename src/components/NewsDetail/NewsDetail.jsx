@@ -3,13 +3,13 @@ import {useParams} from "react-router-dom";
 import axios from "axios";
 import styles from "./NewsDetail.module.css"
 import moment from "moment/moment";
+import 'moment/locale/ru'
 
 const NewsDetail = () => {
     const {id} = useParams()
     const [news, setNews] = useState({})
     const fullText = {__html: news.fulltext}
     const datePub = moment(news.pubDate * 1000).format("DD MMMM YYYY");
-    moment.locale('ru');
 
 
     useEffect(() => {

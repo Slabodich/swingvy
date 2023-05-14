@@ -15,6 +15,7 @@
     overflow: hidden;
     box-sizing: border-box;
 }
+
 .itemIsThird {
     display: flex;
     flex-direction: column;
@@ -84,7 +85,7 @@
 }
 
 .titleText {
-    padding:20px 0 10px;
+    padding: 20px 0 10px;
     margin: 0;
     font-size: 18px;
     font-weight: 700;
@@ -112,7 +113,7 @@
     line-height: 150%;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -141,7 +142,7 @@ a{
     font-size: 13px;
 }
 
-.promoState{
+.promoState {
     display: none;
 }
 
@@ -157,20 +158,35 @@ a{
 }
 
 .downPanel img {
+    margin: 0;
+}
+
+.likeCount img {
     width: 13px;
     height: 12px;
+    margin: 0;
+}
+
+.commentCount img {
+    width: 13px;
+    height: 12px;
+}
+
+.viewCount img {
+    width: 16px;
+    height: 16px;
 }
 
 .downPanel div:nth-last-child(1) {
     padding: 0;
 }
 
-.likeCount, .commentCount, .viewCount{
+.likeCount, .commentCount, .viewCount {
     display: flex;
     align-items: center;
 }
 
-.likeCount img, .commentCount img, .viewCount img{
+.likeCount img, .commentCount img, .viewCount img {
     padding-right: 6px;
 }
 
@@ -183,55 +199,67 @@ a{
     .itemIsThird {
         grid-column: 1 / 3;
     }
+
     .itemIsPromo {
         height: 100%;
         display: grid;
         grid: 1fr / 1fr 206px;
     }
-    .itemIsPromo:nth-child(2n){
+
+    .itemIsPromo:nth-child(2n) {
         grid: 1fr / 206px 1fr;
     }
+
     .imgIsPromo {
         position: static;
 
         height: 206px;
         grid-column: 2 / 3;
     }
-    .itemIsPromo:nth-child(2n) .imgIsPromo{
+
+    .itemIsPromo:nth-child(2n) .imgIsPromo {
         grid-column: 1 / 2;
     }
+
     .favoriteIsPromo {
         padding: 20px 32px 0 20px;
         grid-column: 1 / 2;
         grid-row: 1 / 2;
     }
-    .contentIsPromo{
+
+    .contentIsPromo {
         padding: 20px 0 20px 20px;
         grid-column: 1 / 2;
         grid-row: 1 / 2;
     }
+
     .itemIsPromo:nth-child(2n) .favoriteIsPromo,
-    .itemIsPromo:nth-child(2n) .contentIsPromo{
+    .itemIsPromo:nth-child(2n) .contentIsPromo {
         grid-column: 2 / 3;
     }
-    .previewTextIsPromo{
+
+    .previewTextIsPromo {
         flex: 1;
         padding-right: 20px;
     }
-    .downPanelIsPromo{
+
+    .downPanelIsPromo {
         align-self: end;
         grid-column: 1 / 2;
         grid-row: 1 / 2;
         padding-right: 20px;
     }
-    .itemIsPromo:nth-child(2n) .downPanelIsPromo{
+
+    .itemIsPromo:nth-child(2n) .downPanelIsPromo {
         grid-column: 2 / 3;
     }
+
     .downPanelIsPromo span:first-child {
         padding: 0 6px 0 0;
         flex: 0;
     }
-    .promoState{
+
+    .promoState {
         padding: 0 0 0 6px;
         flex: 1;
         display: block;
