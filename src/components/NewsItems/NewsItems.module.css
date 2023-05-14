@@ -1,5 +1,26 @@
-.newsItems{
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.newsItems {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .newsItems {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .newsItems {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: row dense;
+    }
 }

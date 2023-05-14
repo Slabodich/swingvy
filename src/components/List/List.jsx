@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import styles from './ItemList.module.css'
+import styles from './List.module.css'
 import TextAboutAmoCRM from "../TextAboutAmoCRM/TextAboutAmoCRM";
 import Navigation from "../ui/Navigation/Navigation";
 import NewsItems from "../NewsItems/NewsItems";
 import PromotionItems from "../PromotionItems/PromotionItems";
 
-const ItemList = () => {
-    const [activeTab, setActiveTab] = useState(false);
+const List = () => {
+    const [activeTab, setActiveTab] = useState(2);
 
     return (
         <section className={styles.wrapper}>
@@ -23,4 +23,4 @@ const ItemList = () => {
     );
 };
 
-export default ItemList;
+export default List;

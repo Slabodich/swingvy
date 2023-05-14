@@ -1,0 +1,26 @@
+.search-form{
+    display: flex;
+    align-items: center;
+    margin: 8.49px 0 6.49px 15.99px;
+}
+
+.search-form_input{
+    border: none;
+    outline: none;
+}
+
+.search-form__button{
+    border: none;
+    background-color: transparent;
+    padding-top: 5px;
+}
+
+.search-form__button:hover{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .search-form{
+        margin: 0;
+    }
+}

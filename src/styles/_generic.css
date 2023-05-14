@@ -1,0 +1,38 @@
+/* Позиционирование.
+    Блочность.
+    Отступы.
+    Типография.
+    Все остальное. */
+
+@import url("./_variables.css");
+
+html {
+  font-family: "PT Sans";
+  font-size: 100%;
+  color: var(--regent-gray);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--wild-sand);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--outer-space);
+  font-weight: 700;
+}
+
+a {
+  color: var(--cornflower-blue);
+}
+
+ol,
+ul {
+  padding-left: 8px;
+}
