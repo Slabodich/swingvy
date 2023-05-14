@@ -9,6 +9,7 @@ const NewsItems = () => {
     const [quantityItem] = useState(5);
     const [lastItemIndex, setLastItemIndex] = useState(quantityItem);
     const firstItemIndex = 0;
+    // const sortNews = newses.sort((a,b) => Number(b.pubData) - Number(a.pubDate))
     const currentItem = newses.slice(firstItemIndex, lastItemIndex);
 
     const paginate = () => {
@@ -32,9 +33,9 @@ const NewsItems = () => {
                 {currentItem.map((news, index) => (
                     <>
                         {(index + 1) % 3 === 0 ? (
-                            <Item key={news.id} items={news} isThird={true} />
+                            <Item key={news.id} items={news} isThird={true} isNews={true} />
                         ) : (
-                            <Item key={news.id} items={news} isThird={false} />
+                            <Item key={news.id} items={news} isThird={false} isNews={true}/>
                         )}
                     </>
                 ))}

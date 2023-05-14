@@ -14,8 +14,9 @@ import likes from "../../accets/images/Likes.svg"
 import whiteLikes from "../../accets/images/WhiteLikes.svg"
 import comment from "../../accets/images/Comments.svg"
 import whiteComment from "../../accets/images/WhiteComments.svg"
+import {Link} from "react-router-dom";
 
-const Item = ({items, isThird, isPromo}) => {
+const Item = ({items, isThird, isPromo, isNews}) => {
     const [isFavorite, setFavorite] = useState(false);
 
     const cx = cnBind.bind(styles);
@@ -95,12 +96,14 @@ const Item = ({items, isThird, isPromo}) => {
                 >
                     {items.title}
                 </h2>
-                <p
-                    ref={previewRef}
-                    className={cx("previewText", {previewTextIsThird: isThird, previewTextIsPromo: isPromo})}
-                >
-                    {items.previewtext}
-                </p>
+                <Link to={isNews && `/news/${items.id}`} >
+                    <p
+                        ref={previewRef}
+                        className={cx("previewText", {previewTextIsThird: isThird, previewTextIsPromo: isPromo})}
+                    >
+                        {items.previewtext}
+                    </p>
+                </Link>
             </div>
             <div className={cx("downPanel", {downPanelIsThird: isThird, downPanelIsPromo: isPromo})}>
                 <span>{datePub}</span>

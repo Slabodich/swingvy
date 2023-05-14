@@ -106,9 +106,14 @@
 
     margin: 0;
 
+    cursor: pointer;
     color: var(--regent-gray);
     font-size: 15px;
     line-height: 150%;
+}
+
+a{
+    text-decoration: none;
 }
 
 .previewTextIsThird {
@@ -149,6 +154,11 @@
 
 .downPanel div {
     padding-right: 14px;
+}
+
+.downPanel img {
+    width: 13px;
+    height: 12px;
 }
 
 .downPanel div:nth-last-child(1) {

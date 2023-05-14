@@ -6,7 +6,7 @@ import NewsItems from "../NewsItems/NewsItems";
 import PromotionItems from "../PromotionItems/PromotionItems";
 
 const List = () => {
-    const [activeTab, setActiveTab] = useState(2);
+    const [activeTab, setActiveTab] = useState(1);
 
     return (
         <section className={styles.wrapper}>

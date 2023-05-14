@@ -9,7 +9,7 @@
 html {
   font-family: "PT Sans";
   font-size: 100%;
-  color: var(--regent-gray);
+  color: var(--outer-space);
 }
 
 body {
@@ -19,20 +19,76 @@ body {
   background-color: var(--wild-sand);
   font-size: var(--font-size-base);
   font-weight: 400;
+  line-height: 150%;
 }
 
 h1,
 h2,
 h3 {
+  margin: 0;
+  padding: 0;
+
+  line-height: 150%;
   color: var(--outer-space);
   font-weight: 700;
 }
-
+h1{
+  font-size: 30px;
+  text-transform: uppercase;
+  line-height: 120%;
+}
+h2{
+  font-size: 24px;
+  margin-top: 10px;
+}
+h3{
+  font-size: 18px;
+  margin-top: 30px;
+}
+p{
+  margin: 10px 0;
+  padding: 0;
+}
 a {
   color: var(--cornflower-blue);
 }
 
 ol,
 ul {
-  padding-left: 8px;
+  padding-left: 20px;
+}
+li{
+  list-style-type: none;
+}
+ul li::before{
+  color: #a1d5f6;
+  content: '•';
+  font-size: 18px;
+  margin-right: 10px;
+}
+ol{
+  counter-reset: list1;
+}
+ol li::before{
+  margin-right: 8px;
+
+  color: #a1d5f6;
+  content: counter(list1)'.';
+  counter-increment: list1;
+}
+ol ol{
+  counter-reset: list2;
+}
+ol ol li::before{
+  margin-right: 8px;
+
+  counter-increment: list2;
+  content: counter(list1) "." counter(list2);
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 25px;
+  background: var(--wild-sand);
+  border-left: 5px solid #a1d5f6;
+  border-radius: 3px;
 }
