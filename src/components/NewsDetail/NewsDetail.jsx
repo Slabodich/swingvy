@@ -1,15 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import styles from "./NewsDetail.module.css"
 import moment from "moment/moment";
 import 'moment/locale/ru'
+import TextareaAutosize from 'react-textarea-autosize';
 
 const NewsDetail = () => {
     const {id} = useParams()
     const [news, setNews] = useState({})
     const fullText = {__html: news.fulltext}
     const datePub = moment(news.pubDate * 1000).format("DD MMMM YYYY");
+    const valueRef = useRef(null)
+    console.log(valueRef.current)
+    const defaultRow = () => {
+        valueRef.current.style.height = "32px"
+        valueRef.current.style.overflow = "auto"
+    }
 
 
     useEffect(() => {
@@ -22,7 +29,9 @@ const NewsDetail = () => {
         fetchData();
     }, [id]);
     return (
+
         <div className={styles.newsDetail}>
+            <TextareaAutosize  ref={valueRef} onBlur={defaultRow} />
             <div className={styles.wrapperContent}>
                 <h1 className={styles.title}>Заголовок страницы</h1>
                 <div className={styles.newsContent}>
