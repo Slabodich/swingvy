@@ -1,0 +1,59 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  bottom: 0;
+  width: 375px;
+  height: 100%;
+  background-color: white;
+  z-index: 5;
+  padding: 0;
+  margin: 0;
+  transition: right 0.5s;
+}
+
+.title {
+  padding: 19px 0 20px 20px;
+  margin: 0 0 20px 0;
+  border-bottom: solid 1px var(--athens-gray);
+}
+.logo{
+  width: 155px;
+  height: 30px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.btn {
+  position: absolute;
+  top: 26px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+.active {
+  right: 0;
+}
+
+.menu a {
+  font-size: 28px;
+  text-decoration: none;
+  color: var(--outer-space);
+  font-size: 15px;
+  padding: 0 0 20px 20px;
+}
+
+.menu a:hover {
+  font-weight: 700;
+  color: var(--cornflower-blue);
+}
+
+@media (min-width: 1280px) {
+  .btn {
+    display: none;
+  }
+}

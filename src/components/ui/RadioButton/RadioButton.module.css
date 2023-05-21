@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+   /* margin-bottom: 6px; */
+   height: 19px;
+   padding-bottom: 9px;
+}
+.wrapper input[type="radio"] {
+  display: none;
+}
+
+.wrapper label {
+  cursor: default;
+  display: flex;
+  align-items: center;
+}
+.wrapper label:before {
+  content: " ";
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  min-width: 16px;
+  min-height: 16px;
+  background: white;
+  border: 1px solid var(--regent-gray);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.wrapper input:checked + label:before {
+  content: url("/src/accets/images/IconRadio.svg");
+}
+.wrapper input:disabled + label:before {
+  background: #f1f1f1;
+  border-color: #e8e8e8;
+}
+.wrapper input[type="radio"][disabled]:checked + label::before {
+  content: url("/src/accets/images/IconRadioDisabled.svg");
+}

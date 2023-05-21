@@ -1,19 +1,22 @@
-.nav{
-    display: flex;
-    gap: 35px;
-    border-bottom: 1px solid var(--cornflower-blue);
-    margin-bottom: 26px;
+.nav {
+  display: flex;
+  gap: 26px;
 
+  margin-bottom: 26px;
+
+  border-bottom: 1px solid var(--cornflower-blue);
 }
-.button{
-    background-color: transparent;
-    transition: border-bottom-color 0.4s ease, opacity 0.4s ease;
-    border: none;
-    outline: none;
-    padding: 6px 5px;
-    cursor: pointer;
-    color: var( --outer-space);
+.button {
+  padding: 0 5px 9px;
+
+  background-color: transparent;
+  transition: border-bottom-color 0.4s ease, opacity 0.4s ease;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
-.active{
-    border-bottom: 3px solid var(--cornflower-blue);
+.active {
+  border-bottom: 2px solid var(--cornflower-blue);
+  opacity: 1;
+  padding-bottom: 7px;
 }

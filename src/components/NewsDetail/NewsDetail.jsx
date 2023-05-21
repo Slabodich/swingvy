@@ -15,7 +15,7 @@ const NewsDetail = () => {
     console.log(valueRef.current)
     const defaultRow = () => {
         valueRef.current.style.height = "32px"
-        valueRef.current.style.overflow = "auto"
+
     }
 
 
