@@ -10,7 +10,6 @@ const CheckBox = ({
   errors,
   touched,
   lastcheckBox,
-    onChange
 }) => {
   const cx = cnBind.bind(styles);
   return (
@@ -23,7 +22,6 @@ const CheckBox = ({
         value={value}
         checked={checked}
         disabled={disabled}
-        onChange={onChange}
       />
       <label htmlFor={value} className={cx({ errorLable: errors && touched })}>
         {value}{" "}

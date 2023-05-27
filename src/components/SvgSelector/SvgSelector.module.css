@@ -1,0 +1,23 @@
+.starWhite path {
+    stroke: white;
+}
+
+.starActive path {
+    fill: var(--cornflower-blue)
+}
+
+.starActiveWhite path {
+    fill: white;
+    stroke: white;
+}
+
+.viewsIconLight *{
+    stroke: white;
+}
+
+.likesIconLight *{
+    stroke: white;
+}
+.commentIconLight *{
+    stroke: white;
+}

@@ -1,9 +1,3 @@
-/* Позиционирование.
-    Блочность.
-    Отступы.
-    Типография.
-    Все остальное. */
-
 @import url("./_variables.css");
 
 html {
@@ -32,20 +26,21 @@ h3 {
   color: var(--outer-space);
   font-weight: 700;
 }
-h1{
+h1 {
   font-size: 30px;
   text-transform: uppercase;
   line-height: 120%;
 }
-h2{
-  font-size: 24px;
+h2 {
   margin-top: 10px;
+  font-size: 24px;
 }
-h3{
+h3 {
+  margin-top: 40px;
+  margin-bottom: 10px;
   font-size: 18px;
-  margin-top: 30px;
 }
-p{
+p {
   margin: 10px 0;
   padding: 0;
 }
@@ -53,40 +48,46 @@ a {
   color: var(--cornflower-blue);
 }
 
-ol,
 ul {
-  padding-left: 20px;
+  padding-left: 34px;
+  margin: 20px 0;
+  line-height: 150%;
 }
-li{
+ul li {
+  margin-bottom: 10px;
+}
+ol li {
   list-style-type: none;
+  padding-top: 10px;
 }
-ul li::before{
+ul li::marker {
   color: #a1d5f6;
-  content: '•';
-  font-size: 18px;
-  margin-right: 10px;
 }
-ol{
+ol {
   counter-reset: list1;
+  position: relative;
 }
-ol li::before{
+ol li::before {
+  position: absolute;
+  left: 20px;
   margin-right: 8px;
-
   color: #a1d5f6;
-  content: counter(list1)'.';
+  content: counter(list1) ".";
   counter-increment: list1;
+  height: auto;
 }
-ol ol{
+ol ol {
   counter-reset: list2;
 }
-ol ol li::before{
-  margin-right: 8px;
-
+ol ol li::before {
   counter-increment: list2;
   content: counter(list1) "." counter(list2);
 }
+ol ol li {
+  padding-left: 11px;
+}
 blockquote {
-  margin: 10px 0;
+  margin: 20px 0;
   padding: 10px 25px;
   background: var(--wild-sand);
   border-left: 5px solid #a1d5f6;

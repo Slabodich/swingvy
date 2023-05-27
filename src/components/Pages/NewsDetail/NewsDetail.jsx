@@ -4,7 +4,8 @@ import axios from "axios";
 import styles from "./NewsDetail.module.css";
 import moment from "moment/moment";
 import "moment/locale/ru";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
+import SideBar from "../../ui/SideBar/SideBar";
 
 const NewsDetail = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const NewsDetail = () => {
   useEffect(() => {
     if (!id) return;
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost/api/news/${id}`);
+      const response = await axios.get(`http://localhost:3200/news/${id}`);
       setNews(response.data);
     };
 
@@ -28,17 +29,10 @@ const NewsDetail = () => {
         <div className={styles.newsContent}>
           <span className={styles.date}>{datePub}</span>
           <h2>{news.title}</h2>
-          {/* <div dangerouslySetInnerHTML={fullText} /> */}
           <div>{parse(String(news.fulltext))}</div>
         </div>
       </div>
-      <div className={styles.sideBar}>
-        <span className={styles.a}>Избранное</span>
-        <span>Моя компания</span>
-        <span>Моё развитие</span>
-        <span>Новости компании</span>
-        <span>Телефонная книга</span>
-      </div>
+      <SideBar />
     </div>
   );
 };

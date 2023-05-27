@@ -3,7 +3,7 @@
 
   width: 100%;
 
-  background-color: var(--cornflower-blue);
+  background-color: #4d85e6;
   border: 1px solid var(--royal-blue);
   border-radius: 3px;
   color: white;
@@ -16,10 +16,12 @@
 
 .saveBtn {
   width: 86px;
+  font-size: 14px;
   background-color: var(--cornflower-blue);
 }
 .cancelBtn {
   width: 86px;
+  font-size: 14px;
   background-color: transparent;
   border: none;
   color: var(--regent-gray);

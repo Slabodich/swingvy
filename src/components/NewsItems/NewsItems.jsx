@@ -5,44 +5,43 @@ import axios from "axios";
 import Button from "../ui/Button/Button";
 
 const NewsItems = () => {
-    const [newses, setNews] = useState([]);
-    const [quantityItem] = useState(5);
-    const [lastItemIndex, setLastItemIndex] = useState(quantityItem);
-    const firstItemIndex = 0;
-    // const sortNews = newses.sort((a,b) => Number(b.pubData) - Number(a.pubDate))
-    const currentItem = newses.slice(firstItemIndex, lastItemIndex);
+  const [newses, setNews] = useState([]);
+  const [quantityItem] = useState(5);
+  const [lastItemIndex, setLastItemIndex] = useState(quantityItem);
+  const firstItemIndex = 0;
+  const currentItem = newses.slice(firstItemIndex, lastItemIndex);
 
-    const paginate = () => {
-        if (newses.length > lastItemIndex) {
-            setLastItemIndex(lastItemIndex + quantityItem);
-        }
+  const paginate = () => {
+    if (newses.length > lastItemIndex) {
+      setLastItemIndex(lastItemIndex + quantityItem);
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("http://localhost:3200/news");
+      setNews(response.data);
     };
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await axios.get("http://localhost:3200/news");
-            setNews(response.data);
-        };
+    fetchData();
+  }, []);
 
-        fetchData();
-    }, []);
-
-    return (
-        <div className={styles.wrapper}>
-            <div className={styles.newsItems}>
-                {currentItem.map((news, index) => (
-                    <>
-                        {(index + 1) % 3 === 0 ? (
-                            <Item key={news.id} items={news} isThird={true} isNews={true} />
-                        ) : (
-                            <Item key={news.id} items={news} isThird={false} isNews={true}/>
-                        )}
-                    </>
-                ))}
-            </div>
-            <Button onClick={paginate}>Смотреть еще</Button>
-        </div>
-    );
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.newsItems}>
+        {currentItem.map((news, index) => (
+          <div key={news.id}>
+            {(index + 1) % 3 === 0 ? (
+              <Item items={news} isThird={true}  />
+            ) : (
+              <Item items={news} isThird={false} />
+            )}
+          </div>
+        ))}
+      </div>
+      <Button onClick={paginate}>Смотреть еще</Button>
+    </div>
+  );
 };
 
 export default NewsItems;

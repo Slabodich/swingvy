@@ -4,14 +4,18 @@ import "./CustomSelect.css";
 import classname from "classnames";
 
 const CustomSelect = ({ onChange, options, value, lable, errors, touched }) => {
-
   const defaultValue = () => {
     return options ? options.find((option) => option.value === value) : "";
   };
 
   return (
     <div className="wrapper">
-      <label className={classname("wrapper__lable-select", { errorLabel: errors && touched })}htmlFor={lable}>
+      <label
+        className={classname("wrapper__lable-select", {
+          errorLabel: errors && touched,
+        })}
+        htmlFor={lable}
+      >
         {lable}
       </label>
       <Select
@@ -21,9 +25,7 @@ const CustomSelect = ({ onChange, options, value, lable, errors, touched }) => {
         options={options}
         placeholder="..."
       />
-       {errors && touched && (
-        <div  className={classname("error")}>{errors}</div>
-      )}
+      {errors && touched && <div className={classname("error")}>{errors}</div>}
     </div>
   );
 };
