@@ -1,14 +1,13 @@
 .item {
   position: relative;
-  padding: 0;
-  margin: 0;
 
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
   height: 369px;
   width: 100%;
+  padding: 0;
+  margin: 0;
 
   background-color: white;
   border-radius: 3px;
@@ -83,6 +82,7 @@
 .titleText {
   padding: 20px 0 10px;
   margin: 0;
+
   font-size: 18px;
   font-weight: 700;
   line-height: 150%;
@@ -125,11 +125,11 @@ a {
 }
 
 .contentWrapper {
-  padding: 0 20px;
   display: flex;
   flex: 1;
   justify-content: flex-start;
   flex-direction: column;
+  padding: 0 20px;
 }
 
 .downPanel {
@@ -197,6 +197,7 @@ a {
   }
   .imgIsPromo {
     position: static;
+
     height: 206px;
     grid-column: 2 / 3;
   }

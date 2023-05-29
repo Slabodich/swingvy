@@ -30,13 +30,7 @@ const NewsItems = () => {
     <div className={styles.wrapper}>
       <div className={styles.newsItems}>
         {currentItem.map((news, index) => (
-          <div key={news.id}>
-            {(index + 1) % 3 === 0 ? (
-              <Item items={news} isThird={true}  />
-            ) : (
-              <Item items={news} isThird={false} />
-            )}
-          </div>
+          <Item key={news.id} items={news} isThird={(index + 1) % 3 === 0} />
         ))}
       </div>
       <Button onClick={paginate}>Смотреть еще</Button>
