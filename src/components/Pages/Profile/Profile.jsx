@@ -1,55 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import styles from "./Profile.module.css";
-import { useFormik } from "formik";
 import Input from "../../ui/Input/Input";
 import CustomSelect from "../../ui/CustomSelect/CustomSelect";
 import TextArea from "../../ui/TextArea/TextArea";
-import { object, string, array } from "yup";
 import CheckBox from "../../ui/CheckBox/CheckBox";
 import Button from "../../ui/Button/Button";
 import cnBind from "classnames/bind";
 import SideBar from "../../ui/SideBar/SideBar";
+import useCustomForm from "../../hooks/useCustomForm";
 
 const Profile = () => {
   const cx = cnBind.bind(styles);
-  const validNumb = (val) => {
-    const lengthWithoutDashes = val.replace(/-|_/g, "").length;
-    return lengthWithoutDashes === 14;
-  };
-
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      specialization: "",
-      document: "",
-      city: "",
-      aboutMe: "",
-      workNumber: "",
-      workEmail: "",
-      opinionCheckBtn: [],
-    },
-
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      formik.resetForm();
-    },
-    validationSchema: object().shape({
-      name: string().required("Это обязательное поле"),
-      specialization: string().required("Это обязательное поле"),
-      document: string().required("Это обязательное поле"),
-      city: string().required("Это обязательное поле"),
-      aboutMe: string().required("Это обязательное поле"),
-      workNumber: string()
-        .test("len", "Неправильно введен номер", validNumb)
-        .required("Это обязательное поле"),
-      workEmail: string()
-        .email("Email введен не корректно")
-        .required("Это обязательное поле"),
-      opinionCheckBtn: array()
-        .min(1, "Выберите хотя бы один интересующий вас вариант")
-        .required(),
-    }),
-  });
+  const formik = useCustomForm();
   const optionsForSpecial = [
     { value: "layuoutDesigner", label: "Верстальщик" },
     { value: "fronEnd", label: "fronEnd" },

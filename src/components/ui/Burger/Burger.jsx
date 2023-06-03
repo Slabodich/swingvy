@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Burger.module.css";
 import cnBind from "classnames/bind";
+import SvgSelector from "../../SvgSelector/SvgSelector";
+import {Link} from "react-router-dom";
 
 const Burger = () => {
   const [nav, setNav] = useState(false);
@@ -12,18 +14,17 @@ const Burger = () => {
         className={cx("menu", {active: nav})}
       >
         <h3 className={styles.title}>Меню раздела</h3>
-        <a href="#">Избранное</a>
-        <a href="#">Моя компания</a>
-        <a href="#">Моё развитие</a>
-        <a href="#">Новости компании</a>
-        <a href="#">Телефонная книга</a>
-        <img className={styles.logo} src="/src/accets/images/amoCRMLogo.svg" alt="Logo" />
+          <Link to={"/profile"}><span>Профиль</span></Link>
+          <div className={styles.logo}>
+              <SvgSelector id={"logo"}  />
+          </div>
+
       </div>
       <div onClick={() => setNav(!nav)} className={styles.btn}>
         {nav ? (
-          <img src="/src/accets/images/CrossIcon.svg" />
+          <SvgSelector id={"cross"} />
         ) : (
-          <img src="/src/accets/images/MenuIcon.svg" />
+          <SvgSelector id={"menu"} />
         )}
       </div>
     </div>
