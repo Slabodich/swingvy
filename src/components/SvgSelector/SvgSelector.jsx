@@ -7,6 +7,8 @@ import {ReactComponent as Logo} from "../../accets/images/Logo.svg";
 import {ReactComponent as Avatar} from "../../accets/images/ava.svg";
 import {ReactComponent as Cross} from "../../accets/images/CrossIcon.svg";
 import {ReactComponent as Menu} from "../../accets/images/MenuIcon.svg";
+import {ReactComponent as Youtube} from "../../accets/images/IcoYoutube.svg";
+import {ReactComponent as Instagram} from "../../accets/images/IcoInst.svg";
 import styles from "./SvgSelector.module.css";
 
 const SvgSelector = ({id}) => {
@@ -56,6 +58,10 @@ const SvgSelector = ({id}) => {
                 return (
                     <Logo />
                 );
+            case "logoLight":
+                return (
+                    <Logo className={styles.logoLight}/>
+                );
             case "ava":
                 return (
                     <Avatar />
@@ -67,6 +73,14 @@ const SvgSelector = ({id}) => {
             case "menu":
                 return (
                     <Menu />
+                );
+            case "youtube":
+                return (
+                    <Youtube />
+                );
+            case "instagram":
+                return (
+                    <Instagram />
                 );
             default:
                 return <svg></svg>;

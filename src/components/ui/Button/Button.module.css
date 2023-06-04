@@ -3,7 +3,7 @@
 
   width: 100%;
 
-  background-color: #4d85e6;
+  background-color: var(--cornflower-blue);
   border: 1px solid var(--royal-blue);
   border-radius: 3px;
   color: white;

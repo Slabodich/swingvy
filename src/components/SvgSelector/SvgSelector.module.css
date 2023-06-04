@@ -21,3 +21,6 @@
 .commentIconLight *{
     stroke: white;
 }
+.logoLight *{
+    fill: white;
+}

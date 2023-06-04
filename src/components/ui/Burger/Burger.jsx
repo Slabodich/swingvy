@@ -15,6 +15,7 @@ const Burger = () => {
       >
         <h3 className={styles.title}>Меню раздела</h3>
           <Link to={"/profile"}><span>Профиль</span></Link>
+          <a href="#"><span>Настройки</span></a>
           <div className={styles.logo}>
               <SvgSelector id={"logo"}  />
           </div>
