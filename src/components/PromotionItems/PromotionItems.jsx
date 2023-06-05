@@ -9,7 +9,9 @@ const PromotionItems = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:3200/promotions');
+      const response = await axios.get(
+        'https://server-h42k.onrender.com/promotions',
+      );
       setPromotions(response.data);
     };
 

@@ -19,7 +19,7 @@ const NewsItems = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:3200/news');
+      const response = await axios.get('https://server-h42k.onrender.com/news');
       setNews(response.data);
     };
 
