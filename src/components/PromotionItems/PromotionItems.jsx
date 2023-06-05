@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Item from "../Item/Item";
-import styles from "./PromotionItems.module.css";
-import Button from "../ui/Button/Button";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Item from '../Item/Item';
+import styles from './PromotionItems.module.css';
+import Button from '../ui/Button/Button';
 
 const PromotionItems = () => {
   const [promotions, setPromotions] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3201/promotions");
+      const response = await axios.get('http://localhost:3200/promotions');
       setPromotions(response.data);
     };
 

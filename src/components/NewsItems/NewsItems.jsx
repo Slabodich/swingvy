@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Item from "../Item/Item";
-import styles from "./NewsItems.module.css";
-import axios from "axios";
-import Button from "../ui/Button/Button";
+import React, { useEffect, useState } from 'react';
+import Item from '../Item/Item';
+import styles from './NewsItems.module.css';
+import axios from 'axios';
+import Button from '../ui/Button/Button';
 
 const NewsItems = () => {
   const [newses, setNews] = useState([]);
@@ -19,7 +19,7 @@ const NewsItems = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3200/news");
+      const response = await axios.get('http://localhost:3200/news');
       setNews(response.data);
     };
 
