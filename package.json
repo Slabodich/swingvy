@@ -2,7 +2,7 @@
   "name": "react-first-step",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Slabodich.github.io/swingvy/",
+  "homepage": "https://Slabodich.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
