@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/swingvy/static/css/main.d25e2734.css",
-    "main.js": "/swingvy/static/js/main.8291cbcc.js",
+    "main.js": "/swingvy/static/js/main.bb21a58a.js",
     "static/media/PTSans-Bold-latin.woff2": "/swingvy/static/media/PTSans-Bold-latin.5873f30370efcacbc359.woff2",
     "static/media/PTSans-Regular-latin.woff2": "/swingvy/static/media/PTSans-Regular-latin.eaacec0368bd74e64b38.woff2",
     "static/media/PTSans-Regular-cyr-ext.woff2": "/swingvy/static/media/PTSans-Regular-cyr-ext.0f057f56689da73daeed.woff2",
@@ -32,10 +32,10 @@
     "static/media/MenuIcon.svg": "/swingvy/static/media/MenuIcon.d36ae0dd46a7391cd089f0d80026a25f.svg",
     "static/media/IconCheck.svg": "/swingvy/static/media/IconCheck.846fc533577e2369f590.svg",
     "main.d25e2734.css.map": "/swingvy/static/css/main.d25e2734.css.map",
-    "main.8291cbcc.js.map": "/swingvy/static/js/main.8291cbcc.js.map"
+    "main.bb21a58a.js.map": "/swingvy/static/js/main.bb21a58a.js.map"
   },
   "entrypoints": [
     "static/css/main.d25e2734.css",
-    "static/js/main.8291cbcc.js"
+    "static/js/main.bb21a58a.js"
   ]
 }
