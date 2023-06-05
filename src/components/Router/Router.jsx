@@ -14,7 +14,7 @@ const Router = () => {
         <Header />
         <div className={styles.main}>
           <Routes>
-            <Route element={<List />} path="swingvy/" />
+            <Route element={<List />} path="/swingvy" />
             <Route element={<NewsDetail />} path="/news/:id" />
             <Route element={<Profile />} path="/profile" />
             <Route path="*" element={<div>Страница не найдена</div>} />
