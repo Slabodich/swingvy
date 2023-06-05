@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "npx json-server -w db.json -p 3200"
+    "server": "npx json-server -w db.json --port=3200"
   },
   "browserslist": {
     "production": [
