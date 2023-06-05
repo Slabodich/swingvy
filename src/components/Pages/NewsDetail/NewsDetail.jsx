@@ -1,22 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import styles from "./NewsDetail.module.css";
-import moment from "moment/moment";
-import "moment/locale/ru";
-import parse from "html-react-parser";
-import SideBar from "../../ui/SideBar/SideBar";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import styles from './NewsDetail.module.css';
+import moment from 'moment/moment';
+import 'moment/locale/ru';
+import parse from 'html-react-parser';
+import SideBar from '../../ui/SideBar/SideBar';
 
 const NewsDetail = () => {
   const { id } = useParams();
   const [news, setNews] = useState({});
   const fullText = { __html: news.fulltext };
-  const datePub = moment(news.pubDate * 1000).format("DD MMMM YYYY");
-  moment.locale("ru");
+  const datePub = moment(news.pubDate * 1000).format('DD MMMM YYYY');
+  moment.locale('ru');
   useEffect(() => {
     if (!id) return;
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:3200/news/${id}`);
+      const response = await axios.get(
+        `https://server-h42k.onrender.com/news/${id}`,
+      );
       setNews(response.data);
     };
 
