@@ -1,10 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
-import styles from "./Item.module.css";
-import shave from "shave";
-import cnBind from "classnames/bind";
-import moment from "moment";
-import { Link } from "react-router-dom";
-import SvgSelector from "../SvgSelector/SvgSelector";
+import React, { useRef, useEffect, useState } from 'react';
+import styles from './Item.module.css';
+import shave from 'shave';
+import cnBind from 'classnames/bind';
+import moment from 'moment';
+import { Link } from 'react-router-dom';
+import SvgSelector from '../SvgSelector/SvgSelector';
 
 const Item = ({ items, isThird, isPromo }) => {
   const [isFavorite, setFavorite] = useState(false);
@@ -15,16 +15,16 @@ const Item = ({ items, isThird, isPromo }) => {
 
   const previewRef = useRef(null);
 
-  const datePub = moment(items.pubDate * 1000).format("DD.MM.YYYY");
+  const datePub = moment(items.pubDate * 1000).format('DD.MM.YYYY');
   const Image = items.image || items.link;
 
   const starId = isFavorite
     ? isThird
-      ? "starActiveWhite"
-      : "starActive"
+      ? 'starActiveWhite'
+      : 'starActive'
     : isThird
-    ? "starWhite"
-    : "star";
+    ? 'starWhite'
+    : 'star';
 
   const bgImg = {
     backgroundImage:
@@ -32,12 +32,12 @@ const Item = ({ items, isThird, isPromo }) => {
   };
 
   const cardImg = {
-    backgroundImage: isThird || !Image ? "none" : `url(${Image})`,
+    backgroundImage: isThird || !Image ? 'none' : `url(${Image})`,
   };
 
-  const viewsIconId = isThird ? "viewsIconLight" : "viewsIcon";
-  const likesIconId = isThird ? "likesIconLight" : "likesIcon";
-  const commentIconId = isThird ? "commentIconLight" : "commentIcon";
+  const viewsIconId = isThird ? 'viewsIconLight' : 'viewsIcon';
+  const likesIconId = isThird ? 'likesIconLight' : 'likesIcon';
+  const commentIconId = isThird ? 'commentIconLight' : 'commentIcon';
 
   useEffect(() => {
     const updateShaveSize = () => {
@@ -46,17 +46,17 @@ const Item = ({ items, isThird, isPromo }) => {
       const textHeight = contentHeight - headingHeight;
       shave(previewRef.current, textHeight);
     };
-    window.addEventListener("resize", updateShaveSize);
+    window.addEventListener('resize', updateShaveSize);
     updateShaveSize();
-    return () => window.removeEventListener("resize", updateShaveSize);
+    return () => window.removeEventListener('resize', updateShaveSize);
   }, []);
   return (
     <div
-      className={cx("item", { itemIsThird: isThird, itemIsPromo: isPromo })}
+      className={cx('item', { itemIsThird: isThird, itemIsPromo: isPromo })}
       style={bgImg}
     >
       <button
-        className={cx("favorite", {
+        className={cx('favorite', {
           favoriteIsThird: isThird,
           favoriteIsPromo: isPromo,
         })}
@@ -64,18 +64,25 @@ const Item = ({ items, isThird, isPromo }) => {
       >
         <SvgSelector id={starId} />
       </button>
-      <div className={cx("img", { imgIsPromo: isPromo })} style={cardImg} />
-      <div className={cx("contentWrapper", { contentIsPromo: isPromo })}>
-        <h2
-          ref={headingRef}
-          className={cx("titleText", { titleTextIsThird: isThird })}
-        >
-          {items.title}
-        </h2>
+      <Link to={!isPromo && `/news/${items.id}`}>
+        <div className={cx('img', { imgIsPromo: isPromo })} style={cardImg} />
+      </Link>
+      <div className={cx('contentWrapper', { contentIsPromo: isPromo })}>
+        <Link to={!isPromo && `/news/${items.id}`}>
+          <h2
+            ref={headingRef}
+            className={cx('titleText', {
+              titleTextIsThird: isThird,
+              titleTextIsPromo: isPromo,
+            })}
+          >
+            {items.title}
+          </h2>
+        </Link>
         <Link to={!isPromo && `/news/${items.id}`}>
           <p
             ref={previewRef}
-            className={cx("previewText", {
+            className={cx('previewText', {
               previewTextIsThird: isThird,
               previewTextIsPromo: isPromo,
               previewTextIsNews: !isPromo,
@@ -86,7 +93,7 @@ const Item = ({ items, isThird, isPromo }) => {
         </Link>
       </div>
       <div
-        className={cx("downPanel", {
+        className={cx('downPanel', {
           downPanelIsThird: isThird,
           downPanelIsPromo: isPromo,
         })}
@@ -101,7 +108,7 @@ const Item = ({ items, isThird, isPromo }) => {
           <span>123</span>
         </div>
         <div
-          style={isPromo && { display: "none" }}
+          style={isPromo && { display: 'none' }}
           className={styles.commentCount}
         >
           <SvgSelector id={commentIconId} />

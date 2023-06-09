@@ -24,7 +24,6 @@ const PromotionItems = () => {
           <Item key={promotion.id} items={promotion} isPromo={true} />
         ))}
       </div>
-      <Button>Смотреть еще</Button>
     </div>
   );
 };
